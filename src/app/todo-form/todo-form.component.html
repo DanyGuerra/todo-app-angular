@@ -1,0 +1,19 @@
+<h1>Agregar TODO</h1>
+<div class="input-group mb-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="TODO"
+    aria-label="TODO"
+    [(ngModel)]="todoText"
+    (keyup.enter)="onTodo()"
+  />
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="onTodo()"
+    [disabled]="!todoText"
+  >
+    Agregar TODO
+  </button>
+</div>

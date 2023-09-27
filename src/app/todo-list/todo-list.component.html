@@ -1,0 +1,21 @@
+<div class="card mb-3" *ngFor="let todo of todoList">
+  <div class="card-body row justify-content-between">
+    <div class="col">
+      <input
+        type="checkbox"
+        [(ngModel)]="todo.completed"
+        (change)="onToogleCompleted(todo.id)"
+      />
+    </div>
+    <div class="col" [ngClass]="{ done: todo.completed }">
+      {{ todo.text }}
+    </div>
+    <div class="col">
+      <button (click)="onDeleteTodo(todo.id)">Delete</button>
+    </div>
+    <div class="col">
+      <div *ngIf="todo.completed" class="row justify-content-end">OK</div>
+      <div *ngIf="!todo.completed" class="row justify-content-end">FALSE</div>
+    </div>
+  </div>
+</div>
